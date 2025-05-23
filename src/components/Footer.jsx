@@ -8,7 +8,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full flex flex-col md:flex-row justify-between items-center gap-3 md:gap-6 py-3 md:py-5 px-6 bg-gray-700 text-white">
+    <footer className="w-full flex flex-col md:flex-row justify-between items-center gap-1.5 md:gap-6 py-3 md:py-5 px-6 bg-gray-700 text-white">
       <div className="heading text-lg">
         <NavLink to="/">
           <span className="font-bold">Cam</span>
