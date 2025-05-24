@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Navbar />
 
-        <main className='min-h-screen'>
+        <main className='min-h-screen w-full'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
