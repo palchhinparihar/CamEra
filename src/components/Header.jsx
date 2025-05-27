@@ -9,17 +9,17 @@ const Header = () => {
   ];
   return (
     <>
-      <section className="w-full min-h-[73vh] bg-blue-50 flex flex-col-reverse md:flex-row justify-around items-center gap-4 p-6 text-center">
+      <section className="w-full min-h-[73vh] text-white flex flex-col-reverse md:flex-row justify-around items-center gap-4 p-6 text-center">
         <div className="md:w-[60%] flex flex-col justify-around items-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Welcome to <span className="text-cyan-700">CamEra</span>
+            Welcome to <span className="text-cyan-500">CamEra</span>
           </h1>
           <p className="md:text-xl mb-6 max-w-xl">Discover and buy timeless cameras that capture more than just memories.</p>
           <div className="flex gap-4">
-            <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-2 md:px-4 rounded">
+            <button className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-2 md:px-4 rounded">
               <a href="#shop">Shop Now</a>
             </button>
-            <button className="border border-black hover:bg-black hover:text-white font-semibold px-2 md:px-4 rounded">
+            <button className="bg-blue-900 hover:bg-blue-950 font-semibold px-2 md:px-4 rounded">
               <NavLink to="/contact">Contact</NavLink>
             </button>
           </div>
@@ -30,9 +30,9 @@ const Header = () => {
         </div>
       </section>
 
-      <section className="min-h-40 py-4 px-4 md:px-6 bg-gray-100 flex overflow-auto flex-nowrap sm:justify-center items-center gap-2 md:gap-5">
+      <section className="min-h-40 py-4 px-4 md:px-6 bg-gray-800 flex overflow-auto flex-nowrap sm:justify-center items-center gap-2 md:gap-5">
         {companies.map((company, index) => {
-          return <img key={index} className="w-32 md:w-60 h-12 shadow-gray-500 shadow-lg md:shadow-xl" src={company.image} alt={company.name} />
+          return <img key={index} className="w-32 md:w-60 h-12 shadow-gray-700 shadow-lg" src={company.image} alt={company.name} />
         })}   
       </section>
     </>

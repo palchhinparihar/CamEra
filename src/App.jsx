@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Navbar />
 
-        <main className='min-h-screen w-full'>
+        <main className='min-h-screen w-full bg-[#1a1f32]'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
