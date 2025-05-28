@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShopItem = () => {
   return (
-    <div className="cards mt-12 pb-12 mx-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
+    <div data-aos="zoom-out" className="cards mt-12 pb-12 mx-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
       <div className="card bg-gradient-to-br from-gray-700 via-indigo-950 to-indigo-900 shadow-lg rounded-xl p-4 flex flex-col hover:scale-105 transition-all duration-300">
         <div className="image h-48 flex justify-center items-center">
           <img

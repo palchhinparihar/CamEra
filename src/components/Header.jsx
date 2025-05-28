@@ -9,8 +9,8 @@ const Header = () => {
   ];
   return (
     <>
-      <section className="w-full min-h-[73vh] text-white flex flex-col-reverse md:flex-row justify-around items-center gap-4 p-6 text-center">
-        <div className="md:w-[60%] flex flex-col justify-around items-center">
+      <section  className="w-full min-h-[77vh] text-white flex flex-col-reverse md:flex-row justify-around items-center gap-4 p-6 text-center">
+        <div data-aos="zoom-in-right" className="md:w-[60%] flex flex-col justify-around items-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Welcome to <span className="text-cyan-500">CamEra</span>
           </h1>
@@ -25,14 +25,14 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="md:w-[40%]">
+        <div data-aos="zoom-in-left" className="md:w-[40%]">
           <img src="http://pluspng.com/img-png/photo-camera-png-vintage-camera-png-images-for-camera-png-image-1876-3919.png" alt="Camera" />
         </div>
       </section>
 
-      <section className="min-h-40 py-4 px-4 md:px-6 bg-gray-800 flex overflow-auto flex-nowrap sm:justify-center items-center gap-2 md:gap-5">
+      <section data-aos="fade-up" className="min-h-40 py-4 px-4 md:px-6 bg-gray-800 flex overflow-auto flex-nowrap sm:justify-center items-center gap-2 md:gap-5">
         {companies.map((company, index) => {
-          return <img key={index} className="w-32 md:w-60 h-12 shadow-gray-700 shadow-lg" src={company.image} alt={company.name} />
+          return <img data-aos="flip-left" key={index} className="w-32 md:w-60 h-12 shadow-gray-700 shadow-lg" src={company.image} alt={company.name} />
         })}   
       </section>
     </>
