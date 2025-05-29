@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Navbar />
 
-        <main className='min-h-screen w-full overflow-hidden bg-[#1a1f32]'>
+        <main className='w-full overflow-hidden'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

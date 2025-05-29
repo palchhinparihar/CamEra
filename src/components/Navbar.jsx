@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-[70px] flex justify-between items-center py-4 px-7 bg-blue-950 text-white sticky top-0 z-50">
+      <nav className="w-full h-[70px] flex justify-between items-center py-4 px-7 bg-[#1a1f32]/80 md:backdrop-blur-lg text-white sticky top-0 z-50">
         <div className="heading text-2xl">
           <NavLink to="/" onClick={closeMenu}>
             <span className="font-bold">Cam</span>

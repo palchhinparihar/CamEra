@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import LottieBG from './LottieBG';
+import cameraAnimation from "../assets/camera.json";
 
 const Header = () => {
   const companies = [
@@ -26,7 +28,7 @@ const Header = () => {
         </div>
 
         <div data-aos="zoom-in-left" className="md:w-[40%]">
-          <img src="http://pluspng.com/img-png/photo-camera-png-vintage-camera-png-images-for-camera-png-image-1876-3919.png" alt="Camera" />
+          <LottieBG  animation={cameraAnimation} />
         </div>
       </section>
 
