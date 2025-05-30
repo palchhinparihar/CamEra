@@ -9,6 +9,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           </Routes>
         </main>
 
+        <ScrollToTopButton />
         <Footer />
       </Router>
     </>
