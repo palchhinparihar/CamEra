@@ -34,7 +34,7 @@ const Header = () => {
 
       <section data-aos="fade-up" className="min-h-40 py-4 px-4 md:px-6 mt-4 md:mt-0 bg-gray-800 flex overflow-auto flex-nowrap sm:justify-center items-center gap-2 md:gap-5">
         {companies.map((company, index) => {
-          return <img data-aos="flip-left" key={index} className="w-32 md:w-60 h-12 shadow-gray-700 shadow-lg" src={company.image} alt={company.name} />
+          return <img key={index} className="w-32 md:w-60 h-12 shadow-gray-700 shadow-lg" src={company.image} alt={company.name} />
         })}   
       </section>
     </>
