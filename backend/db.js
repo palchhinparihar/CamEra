@@ -15,8 +15,6 @@ const connectToMongo = async () => {
     await Product.deleteMany();
     await Product.insertMany(products); 
     console.log("Products inserted!");
-    process.exit();
-
   } catch (error) {
     console.log("Couldn't connect to Database!", error);
     process.exit(1);
