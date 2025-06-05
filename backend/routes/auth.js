@@ -23,10 +23,12 @@ router.post('/register', checkers, async (req, res) => {
     return res.status(400).json({ success: false, errors: errors.array() });
   }
 
-  const { name, email, password } = req.body;
+  const name = req.body.name.trim().replace(/\b\w/g, char => char.toUpperCase());
+  const email = req.body.email.toLowerCase();
+  const { password } = req.body;
 
   try {
-    let user = await User.findOne({ email: email });
+    let user = await User.findOne({ email });
     if (user) {
       // Return a bad request
       return res.status(400).json({ success: false, error: "Sorry, a user with this email already exists." });
@@ -48,7 +50,51 @@ router.post('/register', checkers, async (req, res) => {
   } catch (err) {
     // Catch the error
     console.log(err.message);
-    res.status(500).json({ success: false, error: 'Interal Server Error', message: err.message });
+    return res.status(500).json({ success: false, error: 'Internal Server Error', message: err.message });
+  }
+});
+
+checkers = [
+  body('email', 'Enter a valid email').isEmail(),
+  body('password', 'Enter a valid password').exists(),
+];
+
+// ROUTE 2: POST /api/auth/login
+// Desc: Login a user (No login required)
+router.post('/login', checkers, async (req, res) => {
+  // Check if there are any errors or not
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    // Return a bad request
+    return res.status(400).json({ success: false, errors: errors.array() });
+  }
+
+  const email = req.body.email.toLowerCase();
+  const { password } = req.body;
+
+  try {
+    let user = await User.findOne({ email });
+    if (!user) {
+      // Return a bad request
+      return res.status(400).json({ success: false, error: "Incorrect email or password. Please try again." });
+    }
+
+    // Password validation
+    const passwordCompare = await bcrypt.compare(password, user.password);
+    if (!passwordCompare) {
+      return res.status(400).json({ success: false, error: "Incorrect email or password. Please try again." });
+    }
+
+    // Prepare payload for JWT
+    const payloadData = { user: { id: user.id } };
+
+    // Generate auth token
+    const authToken = jwt.sign(payloadData, process.env.JWT_SECRET);
+    res.json({ success: true, authToken });
+  } catch (err) {
+    // Catch the error
+    console.log(err.message);
+    return res.status(500).json({ success: false, error: 'Internal Server Error', message: err.message });
   }
 });
 
