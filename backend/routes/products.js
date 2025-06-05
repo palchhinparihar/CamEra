@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
   res.json(products);
 });
 
-
 // ROUTE 2: GET /api/products/:id
 // Desc: Fetch single product by ID (No login reqiured)
 router.get('/:id', async (req, res) => {

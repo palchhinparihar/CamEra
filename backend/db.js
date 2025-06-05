@@ -1,15 +1,10 @@
 import mongoose from "mongoose";
-import dotenv from 'dotenv';
 import Product from './models/Product.js';
 import products from './data/products.js';
 
-dotenv.config();
-
-const mongoURI = `${process.env.DB_URI}`;
-
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(process.env.DB_URI);
     console.log("Connected to Database successfully!");
 
     await Product.deleteMany();

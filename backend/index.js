@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express";
 import connectToMongo from './db.js';
 
@@ -14,7 +17,7 @@ connectToMongo();
 
 app.get('/', (req, res) => {
   res.send('Welcome to CamEra!');
-})
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
