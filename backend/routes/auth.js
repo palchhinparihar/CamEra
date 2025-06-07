@@ -7,15 +7,15 @@ import User from '../models/User.js';
 const router = express.Router();
 
 // Validation rules for user input
-let checkers = [
-  body('name', 'Enter a valid name').isLength({ min: 3 }),
-  body('email', 'Enter a valid email').isEmail(),
-  body('password', 'Enter a valid password').isLength({ min: 5 }),
+let registerCheckers = [
+  body('name', 'Enter a valid name').isLength({ min: 3 }).notEmpty().trim(),
+  body('email', 'Enter a valid email').isEmail().notEmpty().trim(),
+  body('password', 'Enter a valid password').isLength({ min: 5 }).notEmpty().trim(),
 ];
 
 // ROUTE 1: POST /api/auth/register
 // Desc: Create a new user (No login required)
-router.post('/register', checkers, async (req, res) => {
+router.post('/register', registerCheckers, async (req, res) => {
   // Check if there are any errors or not
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -54,14 +54,14 @@ router.post('/register', checkers, async (req, res) => {
   }
 });
 
-checkers = [
-  body('email', 'Enter a valid email').isEmail(),
-  body('password', 'Enter a valid password').exists(),
+let loginCheckers = [
+  body('email', 'Enter a valid email').isEmail().notEmpty().trim(),
+  body('password', 'Enter a valid password').exists().notEmpty().trim(),
 ];
 
 // ROUTE 2: POST /api/auth/login
 // Desc: Login a user (No login required)
-router.post('/login', checkers, async (req, res) => {
+router.post('/login', loginCheckers, async (req, res) => {
   // Check if there are any errors or not
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
