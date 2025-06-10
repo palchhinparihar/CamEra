@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from "express";
+import cors from "cors";
 import connectToMongo from './db.js';
 
 // Routes
@@ -16,6 +17,9 @@ const port = 3000;
 app.use(express.json());
 
 connectToMongo();
+
+// Enable all CORS requests
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Welcome to CamEra!');

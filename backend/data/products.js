@@ -108,6 +108,61 @@ const products = [
     category: "Full Frame",
     rating: 4.7,
     numReviews: 14
+  },
+  {
+    name: "Kodak PixPro AZ252",
+    brand: "Kodak",
+    price: 14999,
+    description: "16MP point-and-shoot camera with 25x optical zoom and HD video.",
+    imageUrl: "/images/kodak-az252.jpg",
+    stock: 10,
+    category: "Point and Shoot",
+    rating: 3.3,
+    numReviews: 5
+  },
+  {
+    name: "Sony Cyber-shot DSC-W800",
+    brand: "Sony",
+    price: 8999,
+    description: "20.1MP compact camera with 5x zoom and 720p video.",
+    imageUrl: "/images/sony-w800.jpg",
+    stock: 12,
+    category: "Compact",
+    rating: 3.6,
+    numReviews: 7
+  },
+  {
+    name: "Canon IXUS 185",
+    brand: "Canon",
+    price: 7999,
+    description: "20MP digital camera with 8x optical zoom and HD video.",
+    imageUrl: "/images/canon-ixus185.jpg",
+    stock: 9,
+    category: "Compact",
+    rating: 2.9,
+    numReviews: 6
+  },
+  {
+    name: "Vivitar VXX14",
+    brand: "Vivitar",
+    price: 4999,
+    description: "Affordable 14MP digital camera with 4x zoom and video capture.",
+    imageUrl: "/images/vivitar-vxx14.jpg",
+    stock: 15,
+    category: "Digital",
+    rating: 2.5,
+    numReviews: 4
+  },
+  {
+    name: "Polaroid Snap Touch",
+    brand: "Polaroid",
+    price: 11999,
+    description: "Instant digital camera with 13MP and ZINK printing technology.",
+    imageUrl: "/images/polaroid-snap.jpg",
+    stock: 8,
+    category: "Instant",
+    rating: 1.2,
+    numReviews: 5
   }
 ];
 
